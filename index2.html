@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style2.css">
+    <title>Admin Hub</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
+    <script type="text/javascript"> 
+        google.charts.load('current', { 'packages': ['corechart'] }); 
+        google.charts.setOnLoadCallback(drawChart); 
+ 
+        function drawChart() { 
+ 
+            var data = google.visualization.arrayToDataTable([ 
+                ['Task', 'Hours per Day'], 
+                ['Sad', 11], 
+                ['Lonely', 2], 
+                ['Happiness', 2], 
+                ['Numb', 2], 
+                ['Anxiety', 7] 
+            ]); 
+ 
+            var options = { 
+                title: 'Response' 
+            }; 
+ 
+            var chart = new google.visualization.PieChart(document.getElementById('piechart')); 
+ 
+            chart.draw(data, options); 
+        } 
+    </script> 
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
+    <script type="text/javascript"> 
+      google.charts.load('current', {'packages':['corechart']}); 
+      google.charts.setOnLoadCallback(drawChart); 
+ 
+      function drawChart() { 
+        var data = google.visualization.arrayToDataTable([ 
+          ['Que', 'Happiness', 'Sadness'], 
+          ['1-2',  1000,      400], 
+          ['3-4',  1170,      460], 
+          ['5-6',  660,       1120], 
+          ['7-8',  1030,      540] 
+        ]); 
+ 
+        var options = { 
+          title: 'Response', 
+          curveType: 'function', 
+          legend: { position: 'bottom' } 
+        }; 
+ 
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart')); 
+ 
+        chart.draw(data, options); 
+      } 
+    </script>
+</head>
+<body>
+    <section id="sidebar">
+        <a href="#" class="brand">
+<i class='bx bxs-brain'></i>
+<span class="text1">OptimisticAir</span>
+        </a>
+<ul class="side-menu top">
+    <li class="active">
+        <a href="#">
+            <i class='bx bxs-dashboard'></i>
+            <span class="text">Dashboard</span>
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <i class='bx bxs-doughnut-chart'></i>
+            <span class="text">Analytics</span>
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <i class='bx bxs-message-dots'></i>
+            <span class="text">Report</span>
+        </a>
+    </li>  
+    <li>
+        <a href="#">
+            <i class='bx bxs-group'></i>
+            <span class="text">Help Center</span>
+        </a>
+    </li>  
+</ul>
+<ul class="side-menu">
+    <li>
+        <a href="#" class="logout">
+            <i class='bx bxs-log-out-circle'></i>
+            <span class="text">Logout</span>
+        </a>
+    </li>
+<ul> 
+    </section>
+
+<!-- CONTENT -->
+<section id="content">
+    <!-- NAVBAR -->
+    <nav>
+        <i class='bx bx-menu' ></i>
+        <!-- <a href="#" class="nav-link">Categories</a> -->
+         <form action="#">
+            <div class="form-input">
+                <!-- <input type="search" placeholder="Search..."> -->
+                <button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+            </div>
+        </form> 
+        <input type="checkbox" id="switch-mode" hidden>
+        <label for="switch-mode" class="switch-mode"></label>
+        <a href="#" class="notification" id="userpic">
+            <i class='bx bxs-home' ></i>
+            <!-- <span class="num">8</span> -->
+        </a>
+        <a href="#" class="profile">
+            <img src="girl.jpg">
+        </a>
+    </nav>
+    <!-- NAVBAR -->
+
+	<!-- MAIN -->
+    <main>
+        <div class="head-title">
+            <div class="left">
+                <h1>Dashboard</h1>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="#">Dashboard</a>
+                    </li>
+                    <li><i class='bx bx-chevron-right' ></i></li>
+                    <li>
+                        <a class="active" href="#">Home</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- <a href="#" class="btn-download">
+                <i class='bx bxs-cloud-download' ></i>
+                <span class="text">Download PDF</span>
+            </a> -->
+            </div>
+                <ul class="box-info">
+                    <li>
+                    <img class="imggg" src="girl.jpg">
+                        <span class="text">
+                           <h1>Selena</h1>
+                           <h4> Student</h4>
+                           <div class="boxx2">
+                            <p>Location : Delhi</p>
+                           <p> Gender: Female</p>
+                           <p>Age : 21</p>
+                        <p>Weight: 55kg</p>
+                        </div>
+                        </span>
+                    </li>
+                </ul>
+                <section class="container">
+                    <div class="analysis">
+                        <h1 class="cng">Analysis</h1><br>
+                        <h1 class="result">Audio Result:</h1>
+                        <div id="piechart" class="chart"></div>
+                        <h3 class="txt">Score:250</h3><br>
+                        <h1 class="result">Video Result:</h1>
+                        <div id="curve_chart" class="chart1"></div>
+                        <h3 class="txt">Score:120</h3>
+                    </div>
+                </section>
+
+
+                <div class="table-data">
+                    <div class="order">
+                     <div class="head">
+                    <h3>Report</h3>
+                    <i class='bx-bx-search'></i>  
+                    <i class='bx bx-filter'></i> 
+                    <a href="#" class="btn-download">
+                        <i class='bx bxs-cloud-download' ></i>
+                        <span class="text">Download PDF</span>
+                    </a>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Test Id</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                <p>SEPT1-23</p>
+                                </td>
+                                <td>01-09-23</td>
+                                <td><span class="status completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                <p>SEPT2-23</p>
+                                </td>
+                                <td>08-09-23</td>
+                                <td><span class="status completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                <p>SEPT3-23</p>
+                                </td>
+                                <td>16-09-23</td>
+                                <td><span class="status pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                <p>SEPT4-23</p>
+                                </td>
+                                <td>24-09-23</td>
+                                <td><span class="status completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                <p>OCT1-23</p>
+                                </td>
+                                <td>2-10-23</td>
+                                <td><span class="status process">Process</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+                <div class="helping">
+                <div class="help">
+                 <div class="help-box">
+<img src="menu.png" class="menu-icon">
+<img src="doc1.jpg" class="profile-pic">
+<h4>Dr. Jenny</h4>
+<p>Doctor at MAX</p>
+<div class="socialsss">
+    <div class="phone1">
+    <i class='bx bxs-phone-call' style='color:#ffffff'  ></i>
+    <p>+1123456</p>
+</div>
+    <div class="phone2">
+        <i class='bx bx-envelope'></i>
+        <p>maihudoc1@gmail.com</p>
+    </div>
+</div>
+</div> 
+<div  class="help-box" >
+    <img src="menu.png" class="menu-icon">
+    <img src="doc2.jpg" class="profile-pic">
+    <h4>Dr. Mary</h4>
+    <p>Counsellor at MAMC</p>
+    <div class="socialsss">
+        <div class="phone1">
+        <i class='bx bxs-phone-call' style='color:#ffffff'  ></i>
+        <p>+11428936</p>
+    </div>
+        <div class="phone2">
+            <i class='bx bx-envelope'></i>
+            <p>maihudoc2@gmail.com</p>
+        </div>
+    </div>
+    </div> 
+    <div  class="help-box" >
+        <img src="menu.png" class="menu-icon">
+        <img src="doc3.jpg" class="profile-pic">
+        <h4>Dr. Biswas</h4>
+        <p>Senior Doctor at AIIMS</p>
+        <div class="socialsss">
+            <div class="phone1">
+            <i class='bx bxs-phone-call' style='color:#ffffff'  ></i>
+            <p>+1187256</p>
+        </div>
+            <div class="phone2">
+                <i class='bx bx-envelope'></i>
+                <p>maihudoc3@gmail.com</p>
+            </div>
+        </div>
+        </div> 
+        <div  class="help-box" >
+            <img src="menu.png" class="menu-icon">
+            <img src="doc4.jpeg" class="profile-pic">
+            <h4>Dr. Gupta</h4>
+            <p>Senior Counsellor at AIIMS</p>
+            <div class="socialsss">
+                <div class="phone1">
+                <i class='bx bxs-phone-call' style='color:#ffffff'  ></i>
+                <p>+11561456</p>
+            </div>
+                <div class="phone2">
+                    <i class='bx bx-envelope'></i>
+                    <p>maihudoc4@gmail.com</p>
+                </div>
+            </div>
+            </div>
+			<div  class="help-box" >
+				<img src="menu.png" class="menu-icon">
+				<img src="doc5.jpeg" class="profile-pic">
+				<h4>Dr. Verma</h4>
+				<p>Psychiatrist at MAMC</p>
+				<div class="socialsss">
+					<div class="phone1">
+					<i class='bx bxs-phone-call' style='color:#ffffff'  ></i>
+					<p>+115891456</p>
+				</div>
+					<div class="phone2">
+						<i class='bx bx-envelope'></i>
+						<p>maihudoc5@gmail.com</p>
+					</div>
+				</div>
+				</div>
+				<div  class="help-box" >
+					<img src="menu.png" class="menu-icon">
+					<img src="doc6.jpeg" class="profile-pic">
+					<h4>Dr. Alis</h4>
+					<p>Junior Counsellor at SDF</p>
+					<div class="socialsss">
+						<div class="phone1">
+						<i class='bx bxs-phone-call' style='color:#ffffff'  ></i>
+						<p>+11761421</p>
+					</div>
+						<div class="phone2">
+							<i class='bx bx-envelope'></i>
+							<p>maihudoc6@gmail.com</p>
+						</div>
+					</div>
+					</div>
+					
+				 
+</div>
+</div>
+</main>
+</section>
+    <script src="app2.js"></script>
+</body>
+</html>
